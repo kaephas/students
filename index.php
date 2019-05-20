@@ -13,15 +13,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 
-require '/home/kaephasg/config.php';
-
-try {
-    // instantiate a database object
-    $dbh = new PDO(DB_DSN, '' . DB_USERNAME . '', DB_PASSWORD);
-    echo 'Connected to database';
-} catch(PDOException $e){
-    echo $e->getMessage();
-}
+// test upload
 
 //$date = $_POST['date'];
 //$timestamp = strtotime($date);
@@ -39,9 +31,12 @@ $f3 = Base:: instance();
 //Turn on Fat-free error reporting
 $f3->set('DEBUG', 3);
 
+$db = new Database();
+
 //Define a default route
 $f3->route('GET /', function ($f3) {
     // things and stuff
+    echo 'hello';
 });
 
 $f3->run();
